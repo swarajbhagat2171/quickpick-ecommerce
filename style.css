@@ -1,0 +1,382 @@
+ body{
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        
+    }
+ 
+ 
+   #logo-div img {
+    height: 40px;
+}
+
+
+#navigation {
+  position: absolute;
+  top: 0;
+  width: 100%;
+   background-color: #d7d7d7;
+  color: rgb(25, 25, 25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 10;
+ 
+   border-style: none;
+
+}
+
+
+
+#anchor-items {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-right: 200px;
+ 
+}
+
+
+
+.nav-items {
+    color: #501717;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 16px;
+    position: relative;
+    transition: 0.2s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-right: 30px;
+   
+   
+}
+
+.nav-items::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: 0.2s;
+    border-radius: 65px;
+}
+
+.nav-items:hover::before {
+    background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+    box-shadow: 0px 3px 20px 0px rgb(125, 102, 96);
+    transform: scale(1.2);
+}
+
+.nav-items:hover {
+    color: black;
+}
+  
+
+
+h2{
+    font-size: larger;
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+
+    
+    #text{
+        font-size: 30px;
+        margin-top: 40px;
+        text-align: center;
+        margin-bottom: 20px;      
+    }
+
+   
+  .prod {
+        width: 250px;
+        height: 230px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        transition: transform 0.3s ease-in-out;
+       
+    }
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    padding: 20px;
+    background-color: #f5f5f5a0;
+    font-family:  Georgia, serif;
+    margin-top: 50px;
+}
+
+.prodc {
+    width: 250px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: #252525;
+     box-shadow: 0 4px 10px rgba(133, 132, 132, 0.71);
+}
+
+
+
+.prod img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; 
+    padding: 10px;
+    background-color: #fff;
+}
+
+.deti {
+    padding: 15px;
+    text-align: center;
+    background-color: #dcdcdc91;
+    object-fit: contain;
+}
+
+.deti h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #434343;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-color: #252525;
+    color: #252525;
+    border-radius: 0px;
+    text-decoration: none;
+    border-style: ridge;
+    transition: background-color 0.3s ease;
+   
+}
+
+.btn:hover {
+    background-color: #a7a4a4;
+        transform: scale(1.1);
+}
+
+
+.prod {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; 
+
+}
+ 
+ #footer {
+  background-color: #ccccccd5;
+  color: black;
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  margin-top: 100px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgb(61, 61, 61);
+  padding-bottom: 5px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: red;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px; /* Space between icons */
+}
+
+.social-links li {
+  list-style: none;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.payment-img {
+  width: 450px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+      
+}
+
+.image-container img {
+    width: 260px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-container button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    height: 40px;
+    width: 120px;
+    font-family: cursive;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+ 
+}
+
+.image-container button:hover {
+    background-color: #6b6b69;
+    color: #333;
+}
+
+
+
+#cards-div {
+    width: 80%;
+    margin-left:250px;
+    display: flex;
+    gap: 66px;  
+    padding: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    font-family: cursive;
+        
+ }
+    .cards {
+        width: 270px;
+        height: 300px;
+        background-color: #ffffff;   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        transition: transform 0.3s ease-in-out;
+      
+    }
+
+     .cards img {
+        width: 250px;
+        height:300px;
+    }
+    
+    .cards:hover {
+        transform: scale(1.1);
+    }
+
+    
+
+.offer{
+  width: 100%;
+  height: 512px;
+  background-color:#f1f0ee;
+  margin-bottom:60px;
+  margin-top: 40px;
+}
+
+.offer img{
+ 
+ height: 510px;
+ margin-left: 200px;
+ 
+}
+
+/* .ele-ban{
+  width: 100%;
+  height: 512px;
+  background-color:#bfbfbf;
+  margin-bottom:60px;
+  margin-top: 40px;
+}
+
+.ele-ban img{
+ 
+ height: 510px;
+ margin-left: 200px;
+ 
+}
+ */
+
+
+.lat-prod{
+  background-color: #ffffff;
+}
+
+  .imgt {
+  width: 100%;
+  height: 300px;
+  background-color: #d7d7d7;    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.imgt h2 {
+  color: #333;
+  font-size: 36px;
+  margin-top: 30px;
+}
+.imgt p{
+  font-size: 18px ;
+  font-family: monospace;
+}

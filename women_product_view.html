@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prod.css">
+  <script src="cart.js"></script>
+  <style>
+    body{
+      background-color: white;
+    }
+  
+</style>
+
+</head>
+<body>
+
+
+  <div id="navigation">
+    <div id="logo-div">
+      <img id="logo" src="Images/logo1.jpg" alt="QuickPick">
+    </div>
+    <div id="anchor-items">
+      <a class="nav-items" href="layout.html">Home</a>
+      <a class="nav-items" href="products.html">Products</a>
+      <a class="nav-items" href="about_us.html">About</a>
+      <a class="nav-items" href="Contactus.html">Contact</a>
+      <a class="nav-items" href="carts.html" >Cart  <span id="cart-count" class="badge cart-no">0</span></a>
+ 
+    
+      <a href="search.html" class="nav-items">Search</a>
+ 
+    </div> 
+  </div>
+  
+<div class="top">
+
+</div>
+  
+
+  <div class="container mt-5 prod-info">
+    <div class="row  det">
+      <div class="col-md-6 prod-img ">
+        <img id="product-image" src="" class="img-fluid" alt="Product Image">
+      </div>
+      <div class="col-md-6">
+        <h2 id="product-name" class="fw-bold mb-3 text-dark name">Product Name</h2>
+        <h6 id="product-price" class="pri-name" >₹0</h6>
+        <p id="product-description" class="text-secondary des">
+         Floral Embroidered Sequinned Work Kurta With Trouser & Dupatta.
+        </p>
+      
+            <p id="product-rating" class="mb-3 rev">
+          <span class="text-warning fw-bold">4.5 Stars</span>
+          <span class="text-muted">(200 reviews)</span>
+        </p>
+
+     
+ 
+
+  <div class="d-flex justify-content-between align-items-center mt-4">
+     <h6 class="mb-0">Select Size</h6>
+    
+</div>
+    <div class="d-flex gap-3 flex-wrap mt-3 ">
+      <button class="btn border border-black rounded-circle bg-white text-dark size-btn" onclick="selectSize(this)">S</button>
+      <button class="btn border border-black rounded-circle bg-white text-dark size-btn" onclick="selectSize(this)">M</button>
+      <button class="btn border border-black rounded-circle bg-white text-dark size-btn" onclick="selectSize(this)">L</button>
+      <button class="btn border border-black rounded-circle bg-white text-dark size-btn" onclick="selectSize(this)">XL</button>
+      <button class="btn border border-black rounded-circle bg-white text-dark size-btn" onclick="selectSize(this)">XXL</button>  
+    </div>
+    <br>
+   <h6>Quantity</h6> 
+    <input type="number" id="quantity" min="1" value="1" class="form-control w-25 mt-3">
+<br><br>
+      <button id="add-to-cart" class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+    </div>
+
+ <div class="realt">
+      <div class="mt-4">
+        <h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Related Products</h3><br>
+        <div class="row" id="related-products">
+        </div>
+    </div>
+</div>
+
+
+
+  <script>
+    const products = [
+      {
+        id:'w-1' ,
+        name: "AURELIA",
+        price: "₹850",
+        description: "Floral Embroidered Sequinned Work Kurta With Trouser & Dupatta",
+        rating: "4.5 Stars (200 reviews)",
+        image: "Clo_Elec/w1.jpg",
+        related: ['w-3', 'w-4', 'w-5'],
+      },
+      {
+        id: 'w-2',
+        name: "Max",
+        price: "₹699",
+        description: "Dress for Women Stylish | One Piece Dress for Women Long | Women Dress | Long Dress for Women | Maxi Dress for Women",
+        rating: "4.3 Stars (120 reviews)",
+        image: "Clo_Elec/women_des_dress.jpg",
+        related: ['w-11','w-12']
+      },
+      {
+        id: 'w-3',
+        name: "GoSriKi",
+        price: "₹799",
+        description: "Embroidered V-Neck Anarkali Kurta With Trousers & Dupatta",
+        rating: "4.2 Stars (180 reviews)",
+        image: "Clo_Elec/w3.jpg",
+        related: ['w-1', 'w-4', 'w-5']
+      },
+      {
+        id: 'w-4',
+        name: "Fabindia",
+        price: "₹899",
+        description: "Embroidered Anarkali Kurta Pant Set with Organza Dupatta | Viscose,Rayon | A-line fit",
+        rating: "4.7 Stars (350 reviews)",
+        image: "Clo_Elec/w4.jpg",
+        related: ['w-1', 'w-3', 'w-5']
+      },
+      {
+        id: 'w-5',
+        name: "Biba",
+        price: "₹1250",
+        description: "Women's Rayon Viscose Printed Anarkali Kurta with Palazzo & Dupatta",
+        rating: "4.6 Stars (230 reviews)",
+        image: "Clo_Elec/w5.jpg",
+        related: ['w-1','w-2','w-4']
+      },
+      {
+        id: 'w-6',
+        name: "Fashionhub",
+        price: "₹499",
+        description: "Crafted from a soft cotton blend, this floral  Floral Top ",
+        rating: "4.4 Stars (150 reviews)",
+        image: "Clo_Elec/w6.jpg",
+        related: ['w-9','w-10']
+      },
+      {
+        id: 'w-7',
+        name: "Libas",
+        price: "₹499",
+        description: "Stylish and comfortable, this versatile dress is perfect for both casual outings and everyday wear.",
+        rating: "4.1 Stars (300 reviews)",
+        image: "Clo_Elec/w7.jpg",
+        related: ['w-11','w-10']
+      },
+      {
+        id: 'w-8',
+        name: "Aurelia",
+        price: "₹450",
+        description: "Women's Pure Dobby Cotton Self Design Straight Kurta Pant Set",
+        rating: "4.8 Stars (400 reviews)",
+        image: "Clo_Elec/w8.jpg",
+        related: ['w-5']
+      },
+      {
+        id: 'w-9',
+        name: "Allen Solly",
+        price: "₹599",
+        description: "Embroidered Puff Sleeves Top offers a stylish and elegant look, perfect for everyday wear or casual outings.",
+        rating: "4.2 Stars (100 reviews)",
+        image: "Clo_Elec/w9.jpg",
+        related: ['w-7','w-10']
+      },
+      {
+        id: 'w-10',
+        name: "FITHUB",
+        price: "₹499",
+        description: "Soft, trendy, and easy to style, this top is a perfect addition to your everyday wardrobe.",
+        rating: "4.0 Stars (80 reviews)",
+        image: "Clo_Elec/w10.jpg",
+        related: ['w-7','w-9']
+      },
+      {
+        id: 'w-11',
+        name: "Aurelia",
+        price: "₹899",
+        description: "Gracefully designed in soft georgette, this A-line maxi dress adds effortless charm to your look, making it ideal for casual outings or special events.",
+        rating: "4.3 Stars (220 reviews)",
+        image: "Clo_Elec/w2.jpg",
+        related: ['w-2','w-12']
+      },
+     
+      {
+        id: 'w-12',
+        name: "FITHUB",
+        price: "₹999",
+        description: "Elegant and flowy, this Women's Georgette A-Line Maxi Dress offers a perfect blend of comfort and style for any occasion.",
+        rating: "4.0 Stars (50 reviews)",
+        image: "Clo_Elec/w11.jpg",
+        related: ['w-7','w-11']
+      },
+     
+    ];
+
+    // Function to get product details by ID
+    function getProductById(id) 
+    {
+      return products.find(product => product.id === id);
+    }
+
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');  
+
+  
+    const product = getProductById(productId);
+
+ 
+    if (product) 
+    {
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-price').textContent = product.price;
+      document.getElementById('product-description').textContent = product.description;
+      document.getElementById('product-rating').textContent = product.rating;
+      document.getElementById('product-image').src = product.image;
+
+      
+      const relatedProductsDiv = document.getElementById('related-products');
+      relatedProductsDiv.innerHTML = ''; 
+      product.related.forEach(relatedId => {
+        const relatedProduct = getProductById(relatedId);
+        if (relatedProduct) {
+          const relatedCard = document.createElement('div');
+          relatedCard.classList.add('col-md-3');
+          relatedCard.innerHTML = `
+            <div class="card">
+              <img src="${relatedProduct.image}" class="card-img-top" alt="${relatedProduct.name}">
+              <div class="card-body text-center">
+                <h5 class="card-title">${relatedProduct.name}</h5>
+               <h6 class="card-text">${relatedProduct.price}</h6>
+                <a href="women_product_view.html?id=${relatedProduct.id}" class="btn">View Details</a>
+              </div>
+            </div>
+          `;
+          relatedProductsDiv.appendChild(relatedCard);
+        }
+      });
+    } else {
+   
+      document.getElementById('product-name').textContent = "Product not found";
+      document.getElementById('product-price').textContent = "0.00";
+      document.getElementById('product-description').textContent = "Sorry, this product is no longer available.";
+      document.getElementById('product-rating').textContent = "";
+      document.getElementById('product-image').src = "";  
+    }
+
+
+
+ 
+  function selectSize(button) {
+    document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  }
+
+  document.getElementById('add-to-cart').addEventListener('click', () => {
+    if (!product) return;
+
+    const selectedSize = document.querySelector('.size-btn.active');
+    if (!selectedSize) {
+      alert('Please select a size.');
+      return;
+    }
+
+    const quantityInput = parseInt(document.getElementById('quantity').value) || 1;
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingItem = cart.find(item => item.id === product.id && item.size === selectedSize.textContent);
+
+    if (existingItem) {
+      existingItem.quantity += quantityInput;
+    } else {
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: quantityInput,
+        size: selectedSize.textContent 
+      });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Item added to cart!');
+  });
+</script>
+
+
+ <footer id="footer">
+  <div class="footer-content">
+     <div class="footer-section">
+      <h3>Quickpick</h3>
+      <ul>
+      
+        <li><a href="advertising.html">Advertising</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+    
+        <li><a href="#" target="_blank"><img src="Images/twitter.jpg" alt="Twitter" class="social-icon"></a></li>
+        <li><a href="#" target="_blank"><img src="Images/facebook.jpg" alt="Facebook" class="social-icon"></a></li>
+        <li><a href="#" target="_blank"><img src="Images/insta.jpg" alt="Instagram" class="social-icon"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>We Accept</h3>
+      <img src="Images/paymentmethod.jpg" alt="Payment Methods" class="payment-img">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 QuickPick LLC. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+
+
+ 
+</body>
+</html>

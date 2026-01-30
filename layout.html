@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce site</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="Images/logo1.jpg">
+  <link rel="stylesheet" href="prod.css">
+  <script src="cart.js"></script>
+  <style>
+
+    .brand-slider-wrapper {
+      overflow: hidden;
+      width: 100%;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+
+    .brand-slider {
+      display: flex;
+      width: calc(250px * 10); 
+      animation: scroll 20s linear infinite;
+    }
+
+    .brand-logo {
+      flex: 0 0 auto;
+      width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .brand-logo img {
+      max-height: 80px;
+      max-width: 100%;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    .brand-logo img:hover {
+      filter: grayscale(0%);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Navbar layout */
+    
+
+    #logo-div img {
+      height: 50px;
+    }
+
+  
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-color: #d7d7d7;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 0;
+  transition: opacity 1.2s ease-in-out; 
+}
+
+
+
+.slide.active {
+  opacity: 1 !important;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+
+.slide img {
+  width: 400px;
+  height: 400px;
+  border-radius: 0px 0px 0px 70px;
+  margin-left: 920px;
+  margin-top: 60px;
+}
+
+.slogan-text {
+  position: absolute;
+  top: 40%;
+  left: 200px;
+  color: #333;
+  animation: slideUp 1s ease;
+}
+
+.slogan-text h2 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: serif,Georgia;
+  word-spacing: 10px;
+}
+
+.slogan-text h5 {
+  font-size: 20px;
+  color: #444;
+   font-weight:lighter;
+  font-family: monospace,'Courier New', Courier, monospace;
+
+}
+
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.prev-slide, .next-slide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(95, 91, 91, 0.5);
+  color: white;
+  border: none;
+  padding: 0px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev-slide {
+  left: 20px;
+}
+
+.next-slide {
+  right: 20px;
+}
+
+.prev-slide:hover, .next-slide:hover {
+  background-color: rgba(78, 73, 73, 0.8);
+}
+
+  </style>
+</head>
+<body>
+
+
+
+  <div id="navigation">
+    <div id="logo-div">
+      <img id="logo" src="Images/logo1.jpg" alt="QuickPick">
+    </div>
+    <div id="anchor-items">
+      <a class="nav-items" href="layout.html">Home</a>
+      <a class="nav-items" href="products.html">Products</a>
+      <a class="nav-items" href="about_us.html">About</a>
+      <a class="nav-items" href="Contactus.html">Contact</a>
+      <a class="nav-items" href="carts.html" >Cart  <span id="cart-count" class="badge cart-no">0</span></a>
+ 
+    
+      <a href="search.html" class="nav-items">Search</a>
+ 
+    </div> 
+  </div>
+  
+
+  <div class="slider-container">
+    <button class="prev-slide">&lt;</button>
+    <button class="next-slide">&gt;</button>
+
+  <div class="slide">
+    <img src="Images/Untitled design/2.png" alt="Banner 1" />
+    <div class="slogan-text">
+      <h2>Step   Into   Style</h2>
+      <h5><pre>QuickPick brings you the latest looks without the wait</pre></h5>
+      <p style="max-width: 600px; color: #555;">
+   Explore our curated collection of women's fashion — from elegant dresses to everyday essentials. QuickPick helps you stay on-trend with effortless style, comfort, and confidence.
+</p>
+    </div>
+
+  </div>
+  <div class="slide fade">
+    <img src="Images/Untitled design/1.png" alt="Banner 2" />
+    <div class="slogan-text">
+      <h2>Everyday Essentials, Upgraded</h2>
+      <h5>Timeless looks with a modern twist</h5>
+      <p style="max-width: 600px; color: #555;">
+  Discover versatile men's fashion that blends classic style with contemporary edge. From sharp casual wear to refined office looks, QuickPick keeps your wardrobe fresh and effortless.
+</p>
+    </div>
+  </div>
+  <div class="slide fade">
+    <img src="Images/Untitled design/4.png" alt="Banner 3" />
+    <div class="slogan-text">
+      <h2>Think Different and Shop Smart</h2>
+      <h5>Your favorite devices, now just a QuickPick away</h5>
+      <p style="max-width: 600px; color: #555;">
+  Explore the latest technology and gadgets designed to simplify your life. Stay ahead with innovative products that combine style, functionality, and performance.
+</p>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+    <h2 id="text">Shop By Category</h2>
+
+<div id="cards-div">
+    <div class="cards">
+        <div class="image-container">
+            <img src="Images/womd.jpg" alt="">
+            <button onclick="window.location.href='women.html'">Women</button>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="image-container">
+            <img src="Images/mens.jpg" alt="">
+            <button onclick="window.location.href='mens.html'">Mens</button>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="image-container">
+            <img src="Images/elect.jpg"  alt="">
+            <button onclick="window.location.href='electronics.html'">Electronics</button>
+        </div>
+    </div>
+</div>
+
+<br>
+
+    <div class="brand-slider-wrapper">
+      <div class="brand-slider">
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/nike.jpg" alt="Brand 1"></div>
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/adidas.png" alt="Brand 2"></div>
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/zara.png" alt="Brand 3"></div>
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/hp.png" alt="Brand 4"></div>
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/levis.png" alt="Brand 5"></div>
+
+
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/biba.png" alt="Brand 1"></div>
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/allen_solly.png" alt="Brand 2"></div>
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/aurelia.jpg" alt="Brand 3"></div>
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/max.png" alt="Brand 4"></div>
+        <div class="brand-logo"><img src="Clo_Elec/Slider_logo_images/samsung.jpg" alt="Brand 5"></div>
+      </div>
+    </div>
+    <br>
+
+
+
+
+   <div class="offer">
+        <img src="Images/bann.png" alt="pic">
+ 
+    </div>
+    
+ 
+     <h2 id="text">Latest Products</h2>
+
+    <div id="products">
+      <div class="prodc">
+        <div class="prod">
+            <img src="Clo_Elec/camera1.jpg" alt="">
+        </div>
+            <div class="deti">
+                <h2>SONY Camera</h2>
+                <a href="ele_prod_view.html?id=e-2" class="btn">View Details</a>
+            </div>
+        </div>
+
+      <div class="prodc">
+        <div class="prod">
+            <img src="Clo_Elec/m2.jpg"  alt="">
+        </div>
+          <div class="deti">
+            <h2>Men's Shirt</h2>
+            <a href="men_product_view.html?id=m-2" class="btn">View Details</a>
+        </div>
+      </div>
+
+
+      <div class="prodc">
+        <div class="prod">
+            <img src="Clo_Elec/laptop1.jpg" alt="">
+        </div>
+        <div class="deti">
+            <h2>Laptop</h2>
+            <a href="ele_prod_view.html?id=e-4" class="btn ">View Details</a>
+         </div>
+      </div>
+
+      <div class="prodc">
+        <div class="prod">
+            <img src="Clo_Elec/watch2.jpg" alt="">
+        </div>
+          <div class="deti">
+            <h2>SmartWatch</h2>
+            <a href="ele_prod_view.html?id=e-14" class="btn ">View Details</a>
+        </div>
+      </div>
+ 
+    
+    <div class="prodc">
+       <div class="prod">
+            <img src="Clo_Elec/w2.jpg" alt="">
+        </div>
+         <div class="deti">
+            <h2>Dress</h2>
+            <a href="women_product_view.html?id=w-11" class="btn">View Details</a>
+        </div>
+    </div>
+
+     <div class="prodc">
+        <div class="prod">
+            <img src="Clo_Elec/m6.jpg" alt="">
+        </div>
+        <div class="deti">
+            <h2>Jacket</h2>
+            <a href="men_product_view.html?id=m-6" class="btn ">View Details</a>
+        </div>
+      </div>
+
+      <div class="prodc">
+        <div class="prod">
+            <img src="Clo_Elec/w3.jpg" alt="">
+        </div>
+
+        <div class="deti">
+            <h2>Kurta set</h2>
+            <a href="women_product_view.html?id=w-3" class="btn">View Details</a>
+        </div>
+      </div>
+
+      <div class="prodc">
+        <div class="prod">
+            <img src="Clo_Elec/m9.jpg" alt="">
+        </div>
+            <div class="deti">
+              <h2>Track pant</h2>
+              <a href="men_product_view.html?id=m-9" class="btn ">View Details</a>
+        </div>
+    </div>
+</div>
+
+
+ <footer id="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Quickpick</h3>
+      <ul>
+      
+        <li><a href="advertising.html">Advertising</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+    
+        <li><a href="#" target="_blank"><img src="Images/twitter.jpg" alt="Twitter" class="social-icon"></a></li>
+        <li><a href="#" target="_blank"><img src="Images/facebook.jpg" alt="Facebook" class="social-icon"></a></li>
+        <li><a href="#" target="_blank"><img src="Images/insta.jpg" alt="Instagram" class="social-icon"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>We Accept</h3>
+      <img src="Images/paymentmethod.jpg" alt="Payment Methods" class="payment-img">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 QuickPick LLC. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+   let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const prevButton = document.querySelector(".prev-slide");
+const nextButton = document.querySelector(".next-slide");
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.opacity = i === index ? "1" : "0";
+    slide.style.zIndex = i === index ? "1" : "0";
+  });
+}
+
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+}
+
+function prevSlide() {
+  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+  showSlide(slideIndex);
+}
+
+prevButton.addEventListener("click", prevSlide);
+nextButton.addEventListener("click", nextSlide);
+
+setInterval(nextSlide, 5000); 
+
+window.onload = () => showSlide(slideIndex);
+
+</script>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - E-Shop</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"  href="prod.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="cart.js"></script>
+
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.imgt {
+  height: 650px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgt img {
+  height: 100%;
+  width: 1000px;
+  object-fit: contain;
+  display: block;
+  margin-top: 90px;
+}
+
+
+</style>
+</head>
+<body>
+   
+ 
+
+  <div id="navigation">
+    <div id="logo-div">
+      <img id="logo" src="Images/logo1.jpg" alt="QuickPick">
+    </div>
+    <div id="anchor-items">
+      <a class="nav-items" href="layout.html">Home</a>
+      <a class="nav-items" href="products.html">Products</a>
+      <a class="nav-items" href="about_us.html">About</a>
+      <a class="nav-items" href="Contactus.html">Contact</a>
+      <a class="nav-items" href="carts.html" >Cart  <span id="cart-count" class="badge cart-no">0</span></a>
+ 
+    
+      <a href="search.html" class="nav-items">Search</a>
+ 
+    </div> 
+  </div>
+  
+ <div class="imgt">
+    <img src="Images/Traditional/4.png" alt="">
+  </div>
+
+      <div class="col-md-3 filt">
+        <h5>Filters</h5>
+        <div class="mb-3">
+          <h6>Category</h6>
+          <select class="form-select cat" aria-label="Category Filter" id="categoryFilter">
+            <option selected>All Categories</option>
+            <option value="top">Top</option>
+            <option value="maxi-dress">Dress</option>
+            <option value="kurta-set"><kbd>Kurta-set</kbd></option>
+          </select>
+        </div>
+        <br>
+       <div class="mb-3">
+          <h6>Price Range </h6>
+              <label for="minPrice">Min:</label>
+              <input type="number" id="minPrice" value="0" min="0" max="2000" step="50" style="width: 80px;">
+              
+              <label for="maxPrice" style="margin-left: 20px;">Max:</label>
+              <input type="number" id="maxPrice" value="2000" min="0" max="2000" step="100" style="width: 80px;">
+              <br>
+              <br>
+              <button onclick="filterProducts()" class="flit-btn">Apply</button>
+       
+        </div>
+      </div>
+    
+
+
+
+
+  <section class="container mt-5 main">
+    <div class="row g-4 cont">
+      <!-- Product 1 -->
+      <div class="col-md-3 cad" >
+        <div class="card" data-category="clothing-women" data-price="850" data-type="kurta-set">
+          <img src="Clo_Elec/w1.jpg" class="card-img-top img-fluid" alt="Product 1" style="height: 200px; object-fit: cover;">
+           <div class="card-body text-center">
+            <h5 class="card-title">AURELIA</h5>
+            <p class="card-title"> Cotton Floral Kurta with Pant</p>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star-half-o checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹850</h5>
+            <a href="women_product_view.html?id=w-1" class="btn">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 2 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="699" data-type="maxi-dress">
+          <img src="Clo_Elec/women_des_dress.jpg" class="card-img-top img-fluid" alt="Product 2" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title">Max</h5>
+            <p class="card-title"> Printed Fit & Flare Midi Dress</p>
+
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹699</h5>
+            <a href="women_product_view.html?id=w-2" class="btn ">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 3 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="799" data-type="kurta-set">
+          <img src="Clo_Elec/w3.jpg" class="card-img-top img-fluid" alt="Product 3" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title">GoSriKi</h5>
+            <p class="card-title">Kurta Trousers & Dupatta set</p> 
+
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹799</h5>
+            <a href="women_product_view.html?id=w-3" class="btn">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 4 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="799" data-type="kurta-set">
+          <img src="Clo_Elec/w4.jpg" class="card-img-top img-fluid" alt="Product 4" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title">Fabindia</h5>
+            <p class="card-text">Printed Kurta With Dupatta</p>
+
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star-half-o checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹799</h5>
+            
+            <a href="women_product_view.html?id=w-4" class="btn ">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 5 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="1250" data-type="kurta-set">
+          <img src="Clo_Elec/w5.jpg" class="card-img-top img-fluid" alt="Product 5" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title">Biba</h5>
+             <p class="card-text">Kurta,Trousers & Dupatta Set</p>
+
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star-o"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹1250</h5>
+            <a href="women_product_view.html?id=w-5" class="btn ">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 6 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="499" data-type="top">
+          <img src="Clo_Elec/w6.jpg" class="card-img-top img-fluid" alt="Product 6" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title">Fashionhub</h5>
+            <p class="card-title">Floral Printed A-Line Top </p> 
+
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹499</h5>
+            <a href="women_product_view.html?id=w-6" class="btn">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 7 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="499"  data-type="maxi-dress">
+          <img src="Clo_Elec/w7.jpg" class="card-img-top img-fluid" alt="Product 7" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+           <h5 class="card-title">Libas</h5>
+            <p class="card-title">Printed Slit Sleeve Maxi Dress</p> 
+
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹499</h5>
+            <a href="women_product_view.html?id=w-7" class="btn ">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+
+       <!-- Product 8 -->
+       <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="450" data-type="kurta-set">
+          <img src="Clo_Elec/w8.jpg" class="card-img-top img-fluid" alt="Product 8" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+            
+          <h5 class="card-title">Aurelia</h5>
+            <p class="card-title">Printed Cotton Straight Kurti</p> 
+
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹450</h5>
+            <a href="women_product_view.html?id=w-8" class="btn">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 9 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="599" data-type="top">
+          <img src="Clo_Elec/w9.jpg" class="card-img-top img-fluid" alt="Product 9" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+              <h5 class="card-title">Allen Solly</h5>
+            <p class="card-title">Embroidered Puff Sleeves Top</p> 
+
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹599</h5>
+
+            <a href="women_product_view.html?id=w-9" class="btn">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 10 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="349"  data-type="top">
+          <img src="Clo_Elec/w10.jpg" class="card-img-top img-fluid" alt="Product 10" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+               <h5 class="card-title">FITHUB</h5>
+          <p class="card-title">Cotton Printed Top</p> 
+
+
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹349</h5>
+            <a href="women_product_view.html?id=w-10" class="btn ">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 11 -->
+      <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="899"  data-type="maxi-dress">
+          <img src="Clo_Elec/w2.jpg" class="card-img-top img-fluid" alt="Product 11" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+               <h5 class="card-title">Aurelia</h5>
+          <p class="card-title">Floral Print Fit & Flare Maxi Dress</p> 
+
+
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span> 
+          <span class="fa fa-star checked"></span>
+
+            <h5 class="card-text">₹899</h5>
+            <a href="women_product_view.html?id=w-11" class="btn">View Details</a>
+          </div>
+        </div>
+      </div>
+  
+      <!--Product 12-->
+       <div class="col-md-3 cad">
+        <div class="card" data-category="clothing-women" data-price="999"  data-type="maxi-dress">
+          <img src="Clo_Elec/w11.jpg" class="card-img-top img-fluid" alt="Product 10" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+               <h5 class="card-title">FITHUB</h5>
+          <p class="card-title">Flare Maxi Dress</p> 
+
+
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span> 
+          <span class="fa fa-star-o"></span>
+
+            <h5 class="card-text">₹999</h5>
+            <a href="women_product_view.html?id=w-12" class="btn ">View Details</a>
+          </div>
+        </div>
+      </div>
+    
+      
+    </div>
+  </section>
+  
+</div>
+ <footer id="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Quickpick</h3>
+      <ul>
+      
+        <li><a href="advertising.html">Advertising</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+    
+        <li><a href="#" target="_blank"><img src="Images/twitter.jpg" alt="Twitter" class="social-icon"></a></li>
+        <li><a href="#" target="_blank"><img src="Images/facebook.jpg" alt="Facebook" class="social-icon"></a></li>
+        <li><a href="#" target="_blank"><img src="Images/insta.jpg" alt="Instagram" class="social-icon"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>We Accept</h3>
+      <img src="Images/paymentmethod.jpg" alt="Payment Methods" class="payment-img">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 QuickPick LLC. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+<script>
+function filterProducts() {
+  const min = parseInt(document.getElementById("minPrice").value) || 0;
+  const max = parseInt(document.getElementById("maxPrice").value) || 2000;
+  const selectedCategory = document.getElementById("categoryFilter").value.toLowerCase();
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const price = parseInt(card.getAttribute("data-price"));
+    const category = card.getAttribute("data-type").toLowerCase();
+
+    const priceMatch = price >= min && price <= max;
+    const categoryMatch = selectedCategory === "all categories" || category === selectedCategory;
+
+    if (priceMatch && categoryMatch) {
+      card.parentElement.style.display = "block"; 
+    } else {
+      card.parentElement.style.display = "none"; 
+    }
+  });
+}
+</script>
+
+    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

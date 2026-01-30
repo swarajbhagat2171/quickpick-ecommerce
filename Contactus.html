@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prod.css">
+  <script src="cart.js"></script>
+  <title>Contact Us - QuickPick</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+  
+    .contact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: -50px auto 30px;
+      max-width: 1000px;
+      padding: 100px;
+      padding-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      flex: 1 1 300px;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}   
+
+    .card img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+      filter: brightness(0) saturate(100%) sepia(84%) hue-rotate(3deg) saturate(800%) brightness(85%);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+  transform: scale(1.1);
+}
+
+    .card h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .form-section,
+    .faq-section,
+    .map-section,
+    .newsletter-section {
+      max-width: 900px;
+      margin: 0 auto; 
+      padding: 30px;
+      margin-top: 10px;
+    }
+
+    .form-section h2,
+    .faq-section h2,
+    .map-section h2,
+    .newsletter-section h2 {
+      text-align: center;
+     
+      color: #333;
+    }
+
+    .contact-message {
+  font-size: 1.1em;
+  color: #444;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.form-link-container {
+  text-align: center;
+}
+
+.form-button {
+  background-color: #616160;
+  color: rgb(255, 255, 255);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #b8962e;
+  transform: scale(1.05);
+}
+
+
+    /*.faq {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq h3 {
+      color: #d4af37;
+    }*/
+
+    .newsletter-section input[type="email"] {
+      width: 70%;
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .newsletter-section button {
+      padding: 10px 20px;
+        background-color: #616160;
+        color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .social-links1 {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 20px;
+    }
+
+    .social-links1 img {
+      width: 30px;
+      height: 30px;
+    }
+
+
+    @media (max-width: 768px) {
+      .contact-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .newsletter-section input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .newsletter-section button {
+        width: 100%;
+      }
+    }
+
+
+    #cart-count {
+  border-color: #000;
+  border-style:groove;
+  color: black;
+  font-size: 14px ;
+  font-weight: bold;
+  padding: 2px 6px;
+  min-width: 16px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -2px;
+  left: 4px;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+
+
+  <div id="navigation">
+    <div id="logo-div">
+      <img id="logo" src="Images/logo1.jpg" alt="QuickPick">
+    </div>
+    <div id="anchor-items">
+      <a class="nav-items" href="layout.html">Home</a>
+      <a class="nav-items" href="products.html">Products</a>
+      <a class="nav-items" href="about_us.html">About</a>
+      <a class="nav-items" href="Contactus.html">Contact</a>
+      <a class="nav-items" href="carts.html" >Cart  <span id="cart-count" class="badge cart-no">0</span></a>
+ 
+    
+      <a href="search.html" class="nav-items">Search</a>
+ 
+    </div> 
+  </div>
+  
+  <div class="imgt">
+    <h1>CONTACT US</h1>
+    <p>We’re here to help you with anything you need — from orders to deliveries!</p>
+  </div>
+
+
+  <section class="contact-cards">
+    <div class="card">
+      <img src="Images/call.png" alt="Call Icon" />
+      <h3>CALL US</h3>
+      <p>+91 9999999999</p>
+      <p>Mon – Fri, 9AM – 6PM</p>
+    </div>
+    <div class="card">
+      <img src="Images/email.png" alt="Mail Icon" />
+      <h3>EMAIL</h3>
+      <p>support@quickpick.com</p>
+      <p>www.quickpick.com</p>
+    </div>
+  </section>
+
+
+
+
+<section class="form-section">
+  <h2>We’d Love to Hear from You!</h2>
+  <p class="contact-message">
+    At <strong>QuickPick</strong>, your satisfaction is our priority. Whether you have a question, suggestion, or need assistance — we're here for you!<br><br>
+    Simply click the button below to reach out via our contact form.
+  </p>
+  <div class="form-link-container">
+    <a class="form-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdPspLJ1SoLQNHbC9fo5PFjvOWcwwsZoSdlntgqsPDgPY216A/viewform" target="_blank">
+      Fill the Contact Form
+    </a>
+  </div>
+</section>
+
+
+  <!-- FAQ Section 
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <h3>Q.What types of products categories do you offer?</h3>
+      <p>We provide a wide range of Clothing for men and women and Electronics.</p>
+
+      <h3>Q.What is your return policy?</h3>
+      <p>Returns are accepted within 7 days of delivery. Please read our return policy page for more details.</p>
+
+      <h3>Q.Do you offer customer support on weekends?</h3>
+      <p>Our customer support is available Monday to Friday. You can leave us a message and we’ll respond on the next business day.</p>
+    </div>
+  </section>-->
+
+
+  <section class="newsletter-section">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form>
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+
+  <div class="social-links1">
+    <a href="#" target="_blank"><img src="Images/whatsapp.png" alt="WhatsApp"></a>
+    <a href="#" target="_blank"><img src="Images/facebook.jpg" alt="Facebook"></a>
+    <a href="#" target="_blank"><img src="Images/insta.jpg" alt="Instagram"></a>
+  </div>
+
+  
+ <footer id="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Quickpick</h3>
+      <ul>
+      
+        <li><a href="advertising.html">Advertising</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="refund.html">Refund Policy</a></li>
+
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+    
+        <li><a href="#" target="_blank"><img src="Images/twitter.jpg" alt="Twitter" class="social-icon"></a></li>
+        <li><a href="#" target="_blank"><img src="Images/facebook.jpg" alt="Facebook" class="social-icon"></a></li>
+        <li><a href="#" target="_blank"><img src="Images/insta.jpg" alt="Instagram" class="social-icon"></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>We Accept</h3>
+      <img src="Images/paymentmethod.jpg" alt="Payment Methods" class="payment-img">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 QuickPick LLC. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
